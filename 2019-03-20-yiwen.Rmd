@@ -91,5 +91,12 @@ class(dtObject)
 ```{r}
 dtObject
 ```
+```{r}
+typeof(dtObject)
+```
+```{r}
+as.double(dtObject)
+as.integer(dtObject)
+```
 
 
