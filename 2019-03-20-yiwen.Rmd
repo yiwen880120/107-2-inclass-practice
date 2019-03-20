@@ -1,0 +1,44 @@
+---
+title: '2019-03-20'
+author: ""
+date: "3/20/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+dialogue <- c('小明說："明天不用上課。"',
+               '小花說："真的嗎？"')
+
+cat(dialogue, sep="\n")
+```
+
+#logical T=1 F=0
+```{r}
+aLogical <- c(T,TRUE,F,FALSE,FALSE)
+class(aLogical)
+```
+
+```{r}
+sum(aLogical)
+```
+
+#factor
+
+```{r}
+studentMajors <- factor(
+  c("經濟系", "經濟系", "法律系")
+)
+studentMajor <- c("經濟系", "經濟系", "法律系")
+```
+
+```{r}
+class(studentMajors)
+```
+```{r}
+class(studentMajor)
+```
+
