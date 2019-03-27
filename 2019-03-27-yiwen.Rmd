@@ -1,0 +1,134 @@
+---
+title: "2019-03-27-yiwen"
+author: "廖翊彣"
+date: "2019年3月27日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+Sys.timezone()
+```
+```{r}
+library(lubridate)
+```
+```{r}
+dtObject<-ymd_hms("1970-01-01 00:02:53") 
+```
+
+```{r}
+dtObjectVector<-ymd_hms(
+  c("1970-01-01 00:02:53",
+    "1980-02-11 11:25:22")
+)
+```
+
+```{r}
+class(dtObject)
+```
+
+```{r}
+twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+```
+
+```{r}
+LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
+```
+
+```{r}
+typeof(LisbonDateTime)
+as.double(twDateTime)
+as.double(LisbonDateTime)
+```
+```{r}
+twDateTime <- mdy_hms("3/14/2019 8:18:47", tz="Asia/Taipei")
+twDateTime
+
+
+```
+```{r}
+library(lubridate)
+dtobject2 <- ymd("2018-09-11")
+dtobject <- mdy_hms("03-14-2019 08:18:47")
+```
+
+```{r}
+twDateTime <- ymd("2018-09-11")
+```
+
+```{r}
+as.integer(ymd("1970-01-01")) 
+as.integer(ymd("1970-01-02"))
+as.integer(ymd("2019-03-11")) 
+```
+```{r}
+dtObject<-ymd("2018-09-11")
+```
+```{r}
+class(dtObject)
+```
+
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+a+b
+a-b
+a*b
+a/b
+```
+
+```{r}
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+class(aL)
+class(bL)
+class(aL+bL)
+class(a+bL)
+class(a*b)
+```
+```{r}
+c <- 4
+
+c+a
+```
+```{r}
+a^b
+a %% b
+```
+
+```{r}
+twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+twDateTime+1
+twDateTime-1
+```
+```{r}
+twDateTime1<- ymd("2019-08-11")
+twDateTime2 <- ymd("2000-02-01")
+twDateTime1-twDateTime2
+class(twDateTime1-twDateTime2)
+```
+
