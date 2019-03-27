@@ -132,3 +132,57 @@ twDateTime1-twDateTime2
 class(twDateTime1-twDateTime2)
 ```
 
+```{r}
+startingDate <- ymd("2000-02-17")
+startingDate + years(1)
+startingDate + dyears(1)
+```
+# relation
+```{r}
+x <- y 與 x = Y 相同
+```
+
+```{r}
+x <- 5
+y <- 7
+x2 <- c(1,5,10)
+y2 <- c(-1,5,20)
+x>=y
+x<=y
+x==y
+x2>4
+
+```
+```{r}
+x3 <- c("小明","小花")
+y3 <- c("小明","小華")
+x3==y3 #等於
+x3!=y3 #不等於
+```
+```{r}
+x4 <- c(1,5,8)
+y4 <- c(5,8)
+
+x4 %in% y4 #屬於
+```
+
+```{r}
+x2 <- c(1,NA,10)
+y2 <- c(-1,NA,20) #NA=不知道
+
+x3 <- c(NA,"小花")
+y3 <- c(NA,"小華")
+
+is.na(x2) #檢查是否缺失資料
+
+sum(x2)
+```
+```{r}
+sum(x2)
+sum(x2, na.rm = TRUE) #na.rm=REMOVE NA
+sum(x2, na.rm = FALSE)
+```
+```{r}
+0/0 #特別的缺失資料NaN
+```
+
