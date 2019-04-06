@@ -165,4 +165,17 @@ head(date >= ymd("1980-08-01"))
 sum(isafter19800801)
 ```
 
+##幣別為“歐元USD/EUR”的資料有多少筆
+```{r}
+head(currency)
+```
+```{r}
+head(currency == "歐元USD/EUR"  )
+
+isEURO <- currency == "歐元USD/EUR"   ##創造logical class=isEURO
+```
+
+```{r}
+sum(isEURO)
+```
 
