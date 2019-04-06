@@ -146,5 +146,23 @@ date <- ymd(date)
 ```{r}
 class(date)
 ```
+##1980-08-01之後的資料有多少筆
+```{r}
+isafter19800801 <- date >= ymd("1980-08-01")
+isafter19800801
+```
+```{r}
+class(isafter19800801)
+```
+
+
+```{r}
+head(as.integer(date))
+as.integer(ymd("1980-08-01"))
+head(date >= ymd("1980-08-01"))
+```
+```{r}
+sum(isafter19800801)
+```
 
 
