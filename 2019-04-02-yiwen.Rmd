@@ -44,6 +44,16 @@ y5 <- c("台北市","新北市")
 x5 %in% y5
 ```
 
+```{r}
+```
+```{r}
+R --vanilla
+```
+
+```{r}
+install.packages(c("Rcpp", "readr"))
+```
+
 
 
 ```{r}
@@ -52,4 +62,67 @@ exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/mas
 currency <- exData2$幣別
 ```
 
+## Logical Operators
+```{r}
+x5 <- c("台北市","新北市","高雄市")
+greatTaipei <- c("台北市","新北市")
+
+x5 %in% greatTaipei
+```
+```{r}
+x5 <-c("台北市","新北市","高雄市")
+greatTaipei <- c("台北市","新北市") 
+
+
+!(x5 %in% greatTaipei)
+```
+
+```{r}
+y5 <- c("女","男","女")
+
+y5=="女"
+!(y5=="女")
+```
+
+> 圈圈是要圈出"Relational operation"為真的元素在物件內的「位置」
+
+
+```{r}
+x5 %in% greatTaipei
+y5=="女"
+
+(x5 %in% greatTaipei) & (y5=="女") 
+##同時(&)來自greatTaipei又是女性
+```
+##第幾筆資料為true(which)
+```{r}
+y5
+(y5 == "女")
+which(y5=="女")
+which((x5 %in% greatTaipei) & (y5=="女") )
+```
+
+```{r}
+x5 %in% greatTaipei
+y5=="女"
+(x5 %in% greatTaipei) | (y5=="女") ##或(｜) 滿足其中一個條件
+```
+```{r}
+x5 %in% greatTaipei
+y5=="女"
+which((x5 %in% greatTaipei) | (y5=="女"))
+```
+
+```{r}
+xor(x5 %in% greatTaipei, y5=="女") ##either or(不重疊的)
+which(xor(x5 %in% greatTaipei, y5=="女"))
+```
+```{r}
+library(readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+date <- as.character(exData2$期間)
+currency <- exData2$幣別
+exchangeRate <- exData2$匯率
+
+```
 
