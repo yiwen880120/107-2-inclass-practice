@@ -168,6 +168,9 @@ credit100ChosenStudent
 ### 3.3
 請問學號為046S6f645的學生在100學年實得了多少學分？答案請存在物件earnedCredit100ChosenStudent。
 ```{r ans33}
+earnedCredit100ChosenStudent <- sum(studentID == "046S6f645" & schoolYear == 100 & grade >= 60 ) 
+earnedCredit100ChosenStudent
+
 ```
 
 ### 3.4
