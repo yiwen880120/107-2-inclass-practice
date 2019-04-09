@@ -178,4 +178,24 @@ isEURO <- currency == "歐元USD/EUR"   ##創造logical class=isEURO
 ```{r}
 sum(isEURO)
 ```
+##exchangeRate有多少筆NA
+```{r}
+isExchangeRatena <- is.na(exchangeRate) #代表是na的為true 不是的為false
+sum(isExchangeRatena)
+```
+##排除NA後，幣別為“歐元USD/EUR”的資料有多少筆
+```{r}
+isNOTNA <- !is.na(exchangeRate) ##非na
+isEURO <- currency == "歐元USD/EUR" ##幣別為“歐元USD/EUR”的資料
+```
+```{r}
+satisfyboth <- isNOTNA & isEURO
+sum(satisfyboth)
+```
+
+另一種先不存成isNOTNA跟isEURO的寫法
+```{r}
+satisfyboth <- !is.na(exchangeRate) &  currency == "歐元USD/EUR"
+sum(satisfyboth)
+```
 
