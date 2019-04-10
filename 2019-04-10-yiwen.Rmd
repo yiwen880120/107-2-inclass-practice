@@ -48,7 +48,61 @@ str_sub(studentID,2,4)
 
 ```
 
+## join
+str_c
 ```{r}
-str_sub(studentID,5,6)
+month <- c("3","4","2")
+char1 <- c("月","月","月")
+day <- c("11","5","7")
+char2 <- c("日","日","日")
+month
+char1
+day
+char2
+
+str_c(month,char1,day,char2)
+```
+```{r}
+str_c(month,c("月"),day,c("日"))
+str_c(month,"月",day,"日")
+```
+
+```{r}
+month
+day
+str_c(month,day, sep="-") ##中間插橫線
+```
+
+str_split
+```{r}
+dates <- c("3-11", "4-5",  "2-7")
+dates
+str_split(dates,"-")
+```
+
+```{r}
+dates
+str_replace(dates,"-","月")
+```
+
+```{r}
+dates2 <- c("3-11-2019", "4-5-2017",  "2-7-2015")
+dates2
+str_replace(dates2,"-","/")
+str_replace_all(dates2,"-","/")
+```
+
+```{r}
+library(readr)
+githubData <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/githubData.csv")
+username <- githubData$`GitHub username`[11:16]
+reponame <- githubData$`GitHub repo name`[11:16]
+```
+## 將username與reponame合併成Github repo網址
+```{r}
+"https://github.com/"
+username
+reponame
+str_c("https://github.com/",username,reponame,sep="/")
 ```
 
