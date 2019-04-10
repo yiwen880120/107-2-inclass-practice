@@ -56,7 +56,7 @@ fromEcon
 ### 1.2
 請由fromEcon計算出來自經濟學系的觀測值個數，存成答案物件sumEcon。
 ```{r ans12}
-sumEcon <- sum(major == "經濟系")
+sumEcon <- sum(fromEcon)
 sumEcon
 ```
 
