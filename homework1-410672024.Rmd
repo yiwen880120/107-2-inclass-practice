@@ -115,12 +115,7 @@ twTime
 twTime <- ymd_hms(submitTime,tz="Asia/Taipei")
 hour(twTime)
 
-twTime01 <- hour(twTime) >= "1"
-twTime01
-
-twTime06 <- hour(twTime) <= "6"
-twTime06
-nightOwl <- twTime01 & twTime06
+nightOwl <- hour(twTime) == (1|2|3|4|5|6)
 nightOwl
 
 ```
