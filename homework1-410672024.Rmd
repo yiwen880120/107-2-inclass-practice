@@ -146,7 +146,8 @@ studentID, schoolYear, grade, credit的每一個元素位置其值分別代表�
 對每一科，只有及格才表示有拿到學分，請創造一個integer class物件名為earnedCredit, 其值為0若沒拿到該科學分，其值為對應credit位置的學分數若有拿到該科學分。
 （舉例： 若credit為c(2,3,2), 而對應grade為c(55,70,88), 則earnedCredit為c(0,3,2)）此題答案物件為earnedCredit （注意class也要對）
 ```{r ans3}
-grade <- transcriptDataFinal
+
+
 
 
 
@@ -156,14 +157,14 @@ grade <- transcriptDataFinal
 ### 3.2
 請問學號為046S6f645的學生在100學年修習了多少學分? 答案請存在答案物件credit100ChosenStudent。
 ```{r ans32}
-credit100ChosenStudent <- sum(studentID == "046S6f645" & schoolYear == 100) 
+credit100ChosenStudent <- sum(studentID == "046S6f645" & schoolYear == "100") 
 credit100ChosenStudent
 ```
 
 ### 3.3
 請問學號為046S6f645的學生在100學年實得了多少學分？答案請存在物件earnedCredit100ChosenStudent。
 ```{r ans33}
-earnedCredit100ChosenStudent <- sum(studentID == "046S6f645" & schoolYear == 100 & grade >= 60 ) 
+earnedCredit100ChosenStudent <- sum(schoolYear=="100" & studentID=="046S6f645"& grade>="60")
 earnedCredit100ChosenStudent
 
 ```
