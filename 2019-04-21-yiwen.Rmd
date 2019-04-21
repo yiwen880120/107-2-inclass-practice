@@ -115,3 +115,8 @@ extract1[["greenBox"]][[1]]
 extract2[[1]]
 ```
 
+```{r}
+length(plasticContainer)
+plasticContainer[c(T,F,T)]
+```
+
