@@ -58,9 +58,60 @@ plasticContainer <- list(
 )
 ```
 
-[[.]]
+[[.]]取一個
 ```{r}
 plasticContainer[["greenBox"]] #用名稱取
 plasticContainer[[1]] #用數字取
+```
+```{r}
+x <- plasticContainer[["greenBox"]] 
+x[[1]]
+plasticContainer[["greenBox"]][[1]]
+```
+```{r}
+成績單 <- c(
+  個經=90,
+  總經=77,
+  統計=88
+)
+```
+
+```{r}
+成績單[[1]]
+```
+```{r}
+studentRecord <-
+  list(
+    學號="410073058",
+    姓名="王小明",
+    性別="男",
+    學年平均成績=list(
+      一年級=88,
+      二年級=90.3,
+      三年級=92,
+      四年級=95
+    )
+  )
+
+studentRecord
+```
+
+```{r}
+studentRecord[["姓名"]]
+studentRecord[["學年平均成績"]][[3]]
+```
+[.]取一群元素
+```{r}
+plasticContainer[c("greenBox","redBox")] 
+plasticContainer[c(1,2)]
+```
+```{r}
+extract1 <- plasticContainer[c("greenBox")]
+extract1
+extract2 <- plasticContainer[[c("greenBox")]]
+extract2
+
+extract1[["greenBox"]][[1]]
+extract2[[1]]
 ```
 
