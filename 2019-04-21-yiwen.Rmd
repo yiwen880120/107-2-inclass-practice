@@ -124,7 +124,7 @@ plasticContainer[c(T,F,T)]
 成績單[c(FALSE,TRUE,TRUE)]
 ```
 ```{r}
-your_github_username <- "tpemartin"
+your_github_username <- "yiwen880120"
 your_practice_reponame <- "107-2-inclass-practice"
 library(httr)
 library(stringr)
@@ -139,5 +139,20 @@ commitCheck <- content(GET(commitCheckStatement))
 ```
 ```{r}
 commitCheckStatement
+```
+```{r}
+commitCheck[[4]][["commit"]][["author"]][["date"]]
+```
+```{r}
+library(lubridate)
+```
+
+```{r}
+commitCheck[[4]][["commit"]][["author"]][["date"]] -> commitdate
+```
+
+```{r}
+ymd_hms(commitdate)-> commitdate
+with_tz(commitdate,tzone="Asia/Taipei")
 ```
 
