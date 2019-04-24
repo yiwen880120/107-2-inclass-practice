@@ -1,7 +1,7 @@
 ---
 title: "Untitled"
-author: "å»–ç¿Šå½£"
-date: "2019å¹´4æœˆ24æ—¥"
+author: "¹ùÖö???"
+date: "2019¦~4¤ë24¤é—¥"
 output: html_document
 ---
 
@@ -28,3 +28,14 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+MAT2 <- matrix(c("a","b","c","d"),2,2)
+MAT2
+class(MAT2)
+typeof(MAT2)
+MAT2[[2]]
+MAT2[c(T,F,F,T)]
+```
+
