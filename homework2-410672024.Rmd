@@ -162,6 +162,10 @@ allCommitDatesTW
 ### 2.6
 使用`hour()`及`minute()`可分別將date time元素的「小時」及「分鐘」取出（其中小時是24小時制）。請創立一個logical vector答案物件logicWithinTimeFrame，各個元素值為TRUE時代表allCommitDatesTW的時間落在凌晨4點30到凌晨6點30之間（含起迄時點）。（最後一行最忘了打答案物件）
 ```{r ans26}
+hour_twtime <- hour(allCommitDatesTW)
+minute_twtime <- minute(allCommitDatesTW)
+logicWithinTimeFrame <- hour_twtime >=4 & hour_twtime <=6  & !(hour_twtime >=6 & minute_twtime >=30 & minute_twtime <=59) 
+logicWithinTimeFrame
 ```
 
 ## 3
