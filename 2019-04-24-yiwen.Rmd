@@ -134,3 +134,17 @@ matObj1[c(1,4),c(2,3)]
 matObj1[c(T,F,F,T,F),c(F,T,T)]
 ```
 
+```{r}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+```
+```{r}
+class(classSurvey)
+```
+
+
+取出**性別,學分數**
+```{r}
+classSurvey[,c(4,5)]
+```
+
