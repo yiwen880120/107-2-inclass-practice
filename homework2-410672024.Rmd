@@ -180,12 +180,16 @@ transcriptData的class是data frame（用`class(transcriptData)`可得知），�
 ### 3.1
 請查詢transcriptData元素名稱，並將它們存在名為variableNames的character vector答案物件裡。（最後一行最忘了打答案物件）
 ```{r ans31}
+as.data.frame(transcriptData) -> variableNames
+variableNames
 ```
 
 ### 3.2
 variableNames裡每個值是這資料有的欄位名稱，我們常稱之為**變數名稱**。請創造一個logic vector名為logicFromEcon的答案物件，其各別元素值為TRUE當「學系」變數裡的對應元素值為"經濟學系"。（最後一行最忘了打答案物件）
 
 ```{r ans32}
+logicvector <- variableNames[,c("學系")] == "經濟學系"
+logicvector
 ```
 
 ### 3.3
