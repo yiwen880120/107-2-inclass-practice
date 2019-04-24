@@ -145,6 +145,9 @@ map(commitCheck,~.[[3]][[2]][[3]][[1]]) -> allCommitDatesList
 
 allCommitDatesList是個list，請使用`unlist()`函數將它轉成一個atomic vector其class為character，並存在allCommitDates答案物件。（最後一行最忘了打答案物件）
 ```{r ans24}
+allCommitDates <- unlist(allCommitDatesList)
+class(allCommitDates)
+allCommitDates
 ```
 
 ### 2.5 
