@@ -28,3 +28,63 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+StuList <- list(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuList 
+```
+```{r}
+StuDF <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuDF 
+```
+```{r}
+class(StuDF)
+typeof(StuDF)
+```
+```{r}
+StuDF
+StuDF[["姓名"]][[3]]
+```
+
+```{r}
+class(StuDF$姓名)
+StuDF$姓名 <- as.character(StuDF$姓名)
+class(StuDF$姓名)
+```
+
