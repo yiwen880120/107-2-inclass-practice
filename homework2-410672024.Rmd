@@ -196,6 +196,8 @@ logicvector
 請由transcriptData中選出"學號","學分數","必選修類別（必∕選∕通）"變數（使用`[.]` extraction）並存成transcriptPartialData答案物件。（最後一行最忘了打答案物件）
 
 ```{r ans33}
+transcriptPartialData <- transcriptData[,c(1,7,8)]
+transcriptPartialData
 ```
 
 ### 3.4
