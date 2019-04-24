@@ -153,6 +153,10 @@ allCommitDates
 ### 2.5 
 allCommitDates是UTC時區的時間文字字串，請將它轉成date time格式，再改成台灣時區後，存在allCommitDatesTW答案物件。（最後一行最忘了打答案物件）
 ```{r ans25}
+library(lubridate)
+allCommitDates <- ymd_hms(allCommitDates)
+allCommitDatesTW <- with_tz(allCommitDates,tzone = "Asia/Taipei")
+allCommitDatesTW 
 ```
 
 ### 2.6
