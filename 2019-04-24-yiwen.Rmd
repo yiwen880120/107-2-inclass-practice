@@ -1,7 +1,7 @@
 ---
 title: "Untitled"
-author: "廖翊彣"
-date: "2019年4月24日"
+author: "???????"
+date: "2019?~4??24?闥"
 output: html_document
 ---
 
@@ -30,31 +30,14 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```{r}
+MAT2 <- matrix(c("a","b","c","d"),2,2)
+MAT2
+class(MAT2)
+typeof(MAT2)
+MAT2[[2]]
+MAT2[c(T,F,F,T)]
+```
 
 
 ```{r}
@@ -65,6 +48,7 @@ StuList <- list(
   )
 StuList 
 ```
+
 ```{r}
 StuDF <- data.frame(
   學號=c(172,214,322,425,517),
@@ -73,10 +57,12 @@ StuDF <- data.frame(
   )
 StuDF 
 ```
+
 ```{r}
 class(StuDF)
 typeof(StuDF)
 ```
+
 ```{r}
 StuDF
 StuDF[["姓名"]][[3]]
@@ -87,6 +73,7 @@ class(StuDF$姓名)
 StuDF$姓名 <- as.character(StuDF$姓名)
 class(StuDF$姓名)
 ```
+
 ```{r}
 as.data.frame(StuList) -> StuDF3
 
@@ -116,9 +103,34 @@ chosenLETTERS <- LETTERS[1:15]
 matObj1 <- matrix(chosenLETTERS,5,3)
 matObj1
 ```
+
 ```{r}
 chosenletters<- letters[1:15]
 matObj2 <- matrix(chosenletters,5,3)
 matObj2
+```
+
+```{r}
+LETTERS
+chosenLETTERS <- LETTERS[1:8]
+m <- matrix(chosenLETTERS,2,4)
+m
+tolower(m) # 轉成小寫
+m
+toupper(m) # 轉成大寫
+m
+```
+
+```{r}
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+matObj1[3,2] 
+```
+
+```{r}
+matObj1
+matObj1[c(1,4),c(2,3)]
+matObj1[c(T,F,F,T,F),c(F,T,T)]
 ```
 
