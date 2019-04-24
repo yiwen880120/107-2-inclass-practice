@@ -87,4 +87,38 @@ class(StuDF$姓名)
 StuDF$姓名 <- as.character(StuDF$姓名)
 class(StuDF$姓名)
 ```
+```{r}
+as.data.frame(StuList) -> StuDF3
+
+class(StuDF3)
+StuDF3
+```
+
+
+```{r}
+as.data.frame(StuList,stringsAsFactors = F) -> StuDF4
+class(StuDF4)
+StuDF4
+```
+
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
+```
+
+```{r}
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+```
+```{r}
+chosenletters<- letters[1:15]
+matObj2 <- matrix(chosenletters,5,3)
+matObj2
+```
 
