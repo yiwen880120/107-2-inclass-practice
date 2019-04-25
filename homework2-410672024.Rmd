@@ -90,7 +90,7 @@ studentRecord
 請將"一年級"，"二年級"，"三年級"，"四年級"改成"一"，"二"，"三"，"四"。（hint: 改掉studentRecord[[4]]的元素名稱。）（此題最後一行請輸入studentRecord，老師改題時會看studentRecord的names有沒有正確更改。）
 ```{r ans12}
 names(studentRecord)[[4]][1,2,3,4] <- c("一","二","三","四")
-
+studentRecord
 ```
 
 
@@ -205,7 +205,10 @@ transcriptPartialData
 創立一個新的list答案物件叫transcriptPartialDataEcon，裡頭有"學號","學分數","必選修類別（必∕選∕通）"三個元素名稱，各別元素內容來自transcirptPartialData中所對應的變數名稱，**但只保留來自經濟學系**學生的資料（我們稱transcriptPartialDataEcon為transcriptData的子樣本）。 (hint: 活用3.2題結果) （最後一行最忘了打答案物件）
 
 > 這題會使用到name=value將賦予元素名稱，若name有特別字元時，我們可換成"name"=value的形式書寫，如： x <- list(z=c(1,2),"this is special"=c(T,F,T,T,F))
+
 ```{r ans34}
+transcriptPartialDataEcon <- transcriptData[logicvector][,c(1,7,8)]
+transcriptPartialDataEcon
 ```
 
 
