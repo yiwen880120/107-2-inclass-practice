@@ -1,0 +1,161 @@
+---
+title: "Untitled"
+author: "廖翊彣"
+date: "2019年5月8日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+library(lubridate); library(stringr); library(dplyr); library(readr); library(purrr)
+```
+
+#1.文字不能跟數字比，x是字串 "數字"，要轉成數字
+```{r}
+x <- as.character(round(runif(10)*100),10)
+x
+```
+
+```{r}
+as.integer(x) > 50 ->logicBig
+logicBig
+```
+4.
+```{r}
+randomGrades <- sample(40:80,15,replace = T)
+randomCredits <- sample(0:3,15,replace=T)
+data3 <- list(
+  成績=randomGrades,
+  學分數=randomCredits
+)
+```
+
+```{r}
+data3
+```
+```{r}
+logiPass <- (data3$成績 >= 60)
+logiPass
+passData <- list(
+  成績 = data3$成績[logiPass],
+  學分數 = data3$學分數[logiPass]
+)
+passData
+```
+5.
+```{r}
+sample(99:103,15,replace = T)-> yy
+sample(1:12,15,replace=T)-> mm
+str_c("民國",str_pad(yy,3,"left","0"),"年",mm,"月") -> twDates
+```
+5.1
+```{r}
+str_replace(twDates,"民國","") -> x1
+str_replace(x1,"月","") -> twDates2
+twDates2
+```
+```{r}
+str_replace_all(twDates,"(民國)|(月)","") -> twDates2
+twDates2
+```
+5.2
+```{r}
+twDates
+str_sub(twDates,3,5) -> yearCharacter
+yearCharacter
+```
+```{r}
+as.integer(yearCharacter)+1911  -> westYears
+westYears
+```
+5.3
+```{r}
+twDates2
+str_split(twDates,"年") -> datasSplitlist #用年切開年月值
+datasSplitlist
+
+map(datasSplitlist,~.[[2]]) -> monthlist #選出每個元素第二個值
+monthlist
+
+unlist(monthlist) -> monthVector # 將list疊成字串向量
+monthVector
+
+str_c(as.character(westYears),monthVector,"01",sep = "-") -> westDates
+westDates
+
+ymd(westDates) -> westDates # 轉成dates
+westDates
+class(westDates)
+```
+7.
+```{r}
+load("sampledTranscriptData.Rda")
+names(sampledTranscriptData) <- 
+  c('學號','學期成績','學分數','學年','學期','必選修類別（必／選／通）','系級','科目名稱','年級','學屆')
+```
+```{r}
+(sampledTranscriptData$科目名稱 == "科目204") -> logicChosenSubject
+length(logicChosenSubject)
+sum(logicChosenSubject)
+(sampledTranscriptData$科目名稱 == "科目204" & 
+    sampledTranscriptData$學期成績 < 60) -> logicChosenSubjectAndFail
+length(logicChosenSubjectAndFail)
+sum(logicChosenSubjectAndFail)
+sum(logicChosenSubjectAndFail)/sum(logicChosenSubject) -> failRate
+failRate
+```
+7.2
+```{r}
+sampledTranscriptData$學屆 <- 
+  str_sub(sampledTranscriptData$學號,2,4)
+sampledTranscriptData$系碼 <- 
+  str_sub(sampledTranscriptData$學號,5,6)
+tail(sampledTranscriptData$學號) # or head()
+tail(sampledTranscriptData$系碼) # or head()
+```
+7.3
+```{r}
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$系級,"1","")
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$學系,"2","")
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$學系,"3","")
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$學系,"4","")
+
+head(sampledTranscriptData$系級)
+head(sampledTranscriptData$學系)
+```
+
+```{r}
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$系級,"[1234]","")
+
+sampledTranscriptData$學系
+```
+
+```{r}
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$系級,"[:digit:]","")
+
+sampledTranscriptData$學系
+```
+

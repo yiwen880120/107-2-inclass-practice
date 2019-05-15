@@ -146,11 +146,10 @@ studentID, schoolYear, grade, credit的每一個元素位置其值分別代表�
 對每一科，只有及格才表示有拿到學分，請創造一個integer class物件名為earnedCredit, 其值為0若沒拿到該科學分，其值為對應credit位置的學分數若有拿到該科學分。
 （舉例： 若credit為c(2,3,2), 而對應grade為c(55,70,88), 則earnedCredit為c(0,3,2)）此題答案物件為earnedCredit （注意class也要對）
 ```{r ans3}
-
-
-
-
-
+earnedCredit <- (grade >= 60)*credit
+class(earnedCredit)
+earnedCredit <- as.integer(earnedCredit)
+class(earnedCredit)
 
 ```
 

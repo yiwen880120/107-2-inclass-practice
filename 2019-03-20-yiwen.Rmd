@@ -32,7 +32,9 @@ sum(aLogical)
 studentMajors <- factor(
   c("經濟系", "經濟系", "法律系")
 )
+studentMajors
 studentMajor <- c("經濟系", "經濟系", "法律系")
+studentMajor
 ```
 
 ```{r}
@@ -57,6 +59,14 @@ levels(studentMajors)
 ```{r}
 as.integer(studentMajors)
 ```
+```{r}
+stringInteger <- c("1","2","-11")
+class(stringInteger) # 無法進行數值運算
+
+trueInteger <- as.integer(stringInteger)
+class(trueInteger) # 可以進行數值運算
+```
+
 ```{r}
 birthplace <- factor(
   c("台北市","台北市","台中市","台中市","台中市")
