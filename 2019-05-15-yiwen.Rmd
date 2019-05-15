@@ -132,9 +132,71 @@ exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/mas
                     col_types = cols(
                       匯率 = col_number(),
                       期間 = col_character()))
+names(exData3)
 ```
 
 ```{r}
-exData3
+library(lubridate)
+exData3$期間 <- ymd(exData3$期間)
+class(exData3$期間)
+
+```
+
+```{r}
+isAsiaCrisis <- exData3$期間 >= ymd("1997-06-01") & exData3$期間 <= ymd("1998-12-01")
+isAsiaCrisis
+```
+
+```{r}
+logiAsiaCrisis <- exData3$isAsiaCrisis
+exData3[logiAsiaCrisis, ]
+```
+
+```{r}
+exData3[exData3$isAsiaCrisis==T ,]
+```
+
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+```
+
+```{r}
+names(transcriptDataFinal)
+```
+
+##學號“92aS67fee”成績的子樣本
+```{r}
+a<-transcriptDataFinal$學號=="92aS67fee"
+transcriptDataFinal[a,]
+```
+##function
+```{r}
+utility_cobb_douglass <- function(x,y,.alpha,.beta){
+  utilValue <- x^.alpha*y^.beta # 程序產生output值
+  return(utilValue) # 傳回output值
+}
+```
+
+```{r}
+utility_cobb_douglass
+```
+
+
+```{r}
+supply_fun<- function(P,a,b){
+  Qs<-a+b*P
+  return(Qs) 
+}
+demand_fun<- function(P,c,d){
+  Qd<-c-d*P
+  return(Qd) 
+}
+
+```
+
+```{r}
+supply_fun(P=1,0,1)
+demand_fun(P=1,5,1)
 ```
 
