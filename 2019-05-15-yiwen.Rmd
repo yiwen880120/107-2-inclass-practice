@@ -200,3 +200,15 @@ supply_fun(P=1,0,1)
 demand_fun(P=1,5,1)
 ```
 
+```{r}
+studentID <-"92aS67fee" 
+transcriptDataFinal$學號==studentID -> logiChosenStudent ##INPUT STUDENTID
+sum(transcriptDataFinal$學期成績[logiChosenStudent]*
+  transcriptDataFinal$學分數[logiChosenStudent])/
+  sum(transcriptDataFinal$學分數[logiChosenStudent]) -> GPA ##OUTPUT GPA
+```
+
+```{r}
+
+```
+
